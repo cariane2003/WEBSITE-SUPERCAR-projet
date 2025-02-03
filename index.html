@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Cars</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="navbar">
+        <h4>CARVILLA</h4>
+        <a href="#home">HOME</a>
+        <a href="#about">SERVICE</a>
+        <a href="#feactured cars">FEACTURED CARS</a>
+        <a href="#new cars">NEW CARS</a>
+        <a href="#brands">BRANDS</a>
+        <a href="#contact">CONTACT</a>
+        
+    </div>
+    <header>
+        <div class="phrase">
+            <h1>GET YOUR DESIRED CAR IN RESONABLE PRICE</h1><br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel magna a libero posuere </p>
+            <P class="phrase1">vitae molestiae neque nemo commodi quis!</P>
+            <a href="#" class="button">Contact US</a>
+        </div>
+    </header>
+    <div class="contact-form">
+        <form class="search-form">
+            <div class="form-group">
+              <label for="year">Select Year</label><br>
+              <select id="year" name="year">
+                <option value="">Year</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="make">Select Make</label><br>
+              <select id="make" name="make">
+                <option value="">Make</option>
+                <option value="BMW">BMW</option>
+                <option value="Audi">Audi</option>
+                <option value="Mercedes">Mercedes</option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="model">Select Model</label><br>
+              <select id="model" name="model">
+                <option value="">Model</option>
+                <option value="X5">X5</option>
+                <option value="A4">A4</option>
+                <option value="C-Class">C-Class</option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="style">Body Style</label><br>
+              <select id="style" name="style">
+                <option value="">Style</option>
+                <option value="SUV">SUV</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Coupe">Coupe</option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="condition">Car Condition</label><br>
+              <select id="condition" name="condition">
+                <option value="">Condition</option>
+                <option value="New">New</option>
+                <option value="Used">Used</option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="price">Select Price</label><br>
+              <select id="price" name="price">
+                <option value="">Price</option>
+                <option value="20000">Up to $20,000</option>
+                <option value="50000">Up to $50,000</option>
+                <option value="100000">Up to $100,000</option>
+              </select>
+            </div>
+      
+            <div class="search-button">
+              <button type="submit">Search</button>
+            </div>
+          </form>
+    </div>
+    <section class="services-section">
+        <div class="card">
+          <div class="icon"><i class="fas fa-car"></i></div>
+          <h3>Largest Dealership of Car</h3>
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut den fugit sed quia.</p>
+          <div class="line"></div>
+        </div>
+    
+        <div class="card">
+          <div class="icon"><i class="fas fa-tools"></i></div>
+          <h3>Unlimited Repair Warranty</h3>
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut den fugit sed quia.</p>
+          <div class="line"></div>
+        </div>
+    
+        <div class="card highlight">
+          <div class="icon"><i class="fas fa-file-alt"></i></div>
+          <h3>Insurance Support</h3>
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut den fugit sed quia.</p>
+          <div class="line"></div>
+        </div>
+    </section>
+    <div class="section">
+   
+        <p>Checkout the Latest Cars</p>
+        <h2>Newest Cars</h2>
+    
+        <div class="carousel">
+            <img src="new-cars-model/ncm2.png" alt="Car 1" class="car active">
+            <img src="new-cars-model/ncm1.png" alt="Car 2" class="car">
+            <img src="new-cars-model/ncm3.png" alt="Car 3" class="car">
+      
+          <div class="navigation">
+            <button class="nav-button" onclick="previousCar()">&#8249;</button>
+            <button class="nav-button" onclick="nextCar()">&#8250;</button>
+          </div>
+        </div>
+    
+        <div class="car-info">
+          <h3>BMW Series-3 Wagon</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat consequuntur explicabo, recusandae nihil maiores quibusdam quo, officia dolores illum aut adipisci accusantium quis qui! Commodi, doloremque! Tempora quis cupiditate tempore!.</p>
+          <button>Learn More</button>
+        </div>
+      </div>
+    
+      <script>
+        let currentIndex = 0;
+        const cars = document.querySelectorAll('.car');
+    
+        function showCar(index) {
+          cars.forEach((car, i) => {
+            car.classList.toggle('active', i === index);
+          });
+        }
+    
+        function nextCar() {
+          currentIndex = (currentIndex + 1) % cars.length;
+          showCar(currentIndex);
+        }
+    
+        function previousCar() {
+          currentIndex = (currentIndex - 1 + cars.length) % cars.length;
+          showCar(currentIndex);
+        }
+      </script>
+</body>
+</html>
